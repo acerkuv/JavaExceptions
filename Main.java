@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +14,15 @@ public class Main {
 
         UseFinally useFinally = new UseFinally();
         useFinally.inputName(scanner);
+
+        FilesWriter filesWriter = new FilesWriter();
+        try {
+            filesWriter.fileWriter();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
     }
 }
